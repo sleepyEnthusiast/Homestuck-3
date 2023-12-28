@@ -1,4 +1,4 @@
-package bahis.testmod.data;
+package bahis.homestuckv3.data;
 
 import java.util.*;
 
@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
-import bahis.testmod.Testmod;
+import bahis.homestuckv3.Homestuckv3;
 
 public class ModItems {
     // Grist
@@ -34,11 +34,11 @@ public class ModItems {
     public static final Item zillium = registerItem("zillium", new Item(new FabricItemSettings()));
     
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Testmod.name, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(Homestuckv3.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
-        Testmod.LOGGER.info("Registering Mod Items for " + Testmod.name);
+        Homestuckv3.LOGGER.info("Registering Mod Items for " + Homestuckv3.MOD_ID);
 
     }
 }

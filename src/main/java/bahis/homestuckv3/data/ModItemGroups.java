@@ -1,4 +1,4 @@
-package bahis.testmod.data;
+package bahis.homestuckv3.data;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -8,11 +8,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import bahis.testmod.Testmod;
+import bahis.homestuckv3.Homestuckv3;
 
 public class ModItemGroups {
     public static final ItemGroup Grist = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Testmod.name, "buildgrist"),
+            new Identifier(Homestuckv3.MOD_ID, "buildgrist"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.grist"))
                     .icon(() -> new ItemStack(ModItems.buildgrist)).entries((displayContext, entries) -> {
                         entries.add(ModItems.amber);
@@ -42,6 +42,6 @@ public class ModItemGroups {
 
 
     public static void registerItemGroups() {
-        Testmod.LOGGER.info("Registering Item Groups for " + Testmod.name);
+        Homestuckv3.LOGGER.info("Registering Item Groups for " + Homestuckv3.MOD_ID);
     }
 }

@@ -1,6 +1,6 @@
-package bahis.testmod.mixin;
+package bahis.homestuckv3.mixin;
 
-import bahis.testmod.data.ModEventListeners.PickupItemCallBack;
+import bahis.homestuckv3.data.ModEventListeners.PickupItemCallBack;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;

@@ -1,4 +1,4 @@
-package bahis.testmod.mixin;
+package bahis.homestuckv3.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

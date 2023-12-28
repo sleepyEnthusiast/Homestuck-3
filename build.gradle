@@ -22,7 +22,7 @@ loom {
     splitEnvironmentSourceSets()
 
 	mods {
-		"testmod" {
+		"Homestuckv3" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
