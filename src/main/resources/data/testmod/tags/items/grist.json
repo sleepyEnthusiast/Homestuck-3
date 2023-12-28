@@ -1,0 +1,26 @@
+{
+    "replace": false,
+    "values": [
+        "testmod:amber",
+        "testmod:amethyst",
+        "testmod:artifact",
+        "testmod:buildgrist",
+        "testmod:caulk",
+        "testmod:chalk",
+        "testmod:cobalt",
+        "testmod:diamond",
+        "testmod:garnet",
+        "testmod:gold",
+        "testmod:iodine",
+        "testmod:marble",
+        "testmod:mercury",
+        "testmod:quartz",
+        "testmod:ruby",
+        "testmod:rust",
+        "testmod:shale",
+        "testmod:sulfur",
+        "testmod:tar",
+        "testmod:uranium",
+        "testmod:zillium"
+    ]
+}

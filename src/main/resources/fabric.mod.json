@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "testmod",
+	"version": "${version}",
+	"name": "Homestuck^3",
+	"description": "A mod to faciliate parts of sburb into minecraft.",
+	"authors": [
+		"Bahis"
+	],
+	"contact": {
+		"homepage": "https://stopitbahis.tumblr.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC BY-NC-SA 4.0",
+	"icon": "assets/testmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"bahis.testmod.Testmod"
+		],
+		"client": [
+			"bahis.testmod.TestmodClient"
+		],
+		"fabric-datagen": [
+			"bahis.testmod.TestmodDataGenerator"
+		]
+	},
+	"mixins": [
+		"testmod.mixins.json",
+		{
+			"config": "testmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
