@@ -1,0 +1,26 @@
+{
+    "replace": false,
+    "values": [
+        "homestuckv3:amber",
+        "homestuckv3:amethyst",
+        "homestuckv3:artifact",
+        "homestuckv3:buildgrist",
+        "homestuckv3:caulk",
+        "homestuckv3:chalk",
+        "homestuckv3:cobalt",
+        "homestuckv3:diamond",
+        "homestuckv3:garnet",
+        "homestuckv3:gold",
+        "homestuckv3:iodine",
+        "homestuckv3:marble",
+        "homestuckv3:mercury",
+        "homestuckv3:quartz",
+        "homestuckv3:ruby",
+        "homestuckv3:rust",
+        "homestuckv3:shale",
+        "homestuckv3:sulfur",
+        "homestuckv3:tar",
+        "homestuckv3:uranium",
+        "homestuckv3:zillium"
+    ]
+}

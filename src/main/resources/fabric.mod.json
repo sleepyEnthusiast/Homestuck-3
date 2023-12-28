@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "testmod",
+	"id": "homestuckv3",
 	"version": "${version}",
 	"name": "Homestuck^3",
 	"description": "A mod to faciliate parts of sburb into minecraft.",
@@ -11,24 +11,24 @@
 		"homepage": "https://stopitbahis.tumblr.com/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC BY-NC-SA 4.0",
-	"icon": "assets/testmod/icon.png",
+	"license": "GNU GPLv3",
+	"icon": "assets/homestuckv3/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"bahis.testmod.Testmod"
+			"bahis.homestuckv3.Homestuckv3"
 		],
 		"client": [
-			"bahis.testmod.TestmodClient"
+			"bahis.homestuckv3.Homestuckv3Client"
 		],
 		"fabric-datagen": [
-			"bahis.testmod.TestmodDataGenerator"
+			"bahis.homestuckv3.Homestuckv3DataGenerator"
 		]
 	},
 	"mixins": [
-		"testmod.mixins.json",
+		"homestuckv3.mixins.json",
 		{
-			"config": "testmod.client.mixins.json",
+			"config": "homestuckv3.client.mixins.json",
 			"environment": "client"
 		}
 	],
