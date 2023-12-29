@@ -1,7 +1,5 @@
 package bahis.homestuckv3.data;
 
-import java.util.*;
-
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.*;

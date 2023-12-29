@@ -1,6 +1,5 @@
 package bahis.homestuckv3.mixin;
 
-import bahis.homestuckv3.data.ModEventListeners.PickupItemCallBack;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
@@ -9,6 +8,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import bahis.homestuckv3.util.ModEventListeners.PickupItemCallBack;
 
 @Mixin(ItemEntity.class)
 public class PickupMixin {
