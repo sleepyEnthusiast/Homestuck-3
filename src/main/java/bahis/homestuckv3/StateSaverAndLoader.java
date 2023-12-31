@@ -1,9 +1,5 @@
 package bahis.homestuckv3;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.MinecraftServer;
@@ -22,7 +18,8 @@ public class StateSaverAndLoader extends PersistentState {
         players.forEach((uuid, playerData) -> {
             NbtCompound playerNbt = new NbtCompound();
  
-            playerNbt.putIntArray("gristCache", playerData.getGristCache());
+            playerNbt.putIntArray("valueCache", playerData.getValueCache());
+            playerNbt.putString("nameCache", playerData.getNameCache());
  
             playersNbt.put(uuid.toString(), playerNbt);
         });
@@ -37,17 +34,15 @@ public class StateSaverAndLoader extends PersistentState {
 
         playersNbt.getKeys().forEach(key -> {
             PlayerData playerData = new PlayerData();
-            
-            List<Integer> newCache = Arrays.stream(playersNbt.getCompound(key).getIntArray("gristCache"))
-                .boxed()
-                .collect(Collectors.toList());
 
-            playerData.setGristCache(newCache);
+            playerData.setGristCacheWithArray(playersNbt.getCompound(key).getString("nameCache"), playersNbt.getCompound(key).getIntArray("valueCache"));
  
             UUID uuid = UUID.fromString(key);
             state.players.put(uuid, playerData);
         });
 
+        state.markDirty();
+        
         return state;
     }
  

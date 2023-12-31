@@ -67,11 +67,10 @@ public class ModEventListeners {
                 MinecraftServer server = player.getServer();
  
                 PacketByteBuf data = PacketByteBufs.create();
-                int[] gristCacheArray = playerState.getGristCache().stream()
-                    .mapToInt(Integer::intValue)
-                    .toArray();
                 
-                data.writeIntArray(gristCacheArray);
+                data.writeString(playerState.getNameCache());// ALWAYS WRITE STRING AND THEN ARRAY!!! PacketBytes must be read sequentially and since thats the order the addGrist method needs it'll bug out and ruin the gristcache!
+                data.writeIntArray(playerState.getValueCache());
+                
  
                 ServerPlayerEntity playerEntity = server.getPlayerManager().getPlayer(player.getUuid());
                 server.execute(() -> {

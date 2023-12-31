@@ -1,8 +1,6 @@
 package bahis.homestuckv3;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import bahis.homestuckv3.util.ModEventListeners;
 import net.fabricmc.api.ClientModInitializer;
@@ -16,22 +14,23 @@ public class Homestuckv3Client implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ClientPlayNetworking.registerGlobalReceiver(Homestuckv3.INITIAL_SYNC, (client, handler, buf, responseSender) -> {
-            List<Integer> newCache = Arrays.stream(buf.readIntArray()).boxed().collect(Collectors.toList());
-            playerData.setGristCache(newCache);
+            String nameCache = buf.readString();
+			int[] valueCache = buf.readIntArray();
+			playerData.setGristCacheWithArray(nameCache, valueCache);
 
-            client.execute(() -> {
-                client.player.sendMessage(Text.literal("Grist Cache: " + playerData.getGristCache().toString()));
+			client.execute(() -> { // Prevents error on sending player message before player is initialised, better to queue it so it can be executed when player is created.
+                client.player.sendMessage(Text.literal("Grist Cache: " + Arrays.toString(playerData.getValueCache())));
             });
+            
         });
 		
 		ClientPlayNetworking.registerGlobalReceiver(ModEventListeners.GRIST_PICKUP, (client, handler, buf, responseSender) -> {
-			List<Integer> newCache = Arrays.stream(buf.readIntArray()).boxed().collect(Collectors.toList());
-            playerData.setGristCache(newCache);
- 
-            client.execute(() -> {
-                client.player.sendMessage(Text.literal("Grist Cache: " + playerData.getGristCache().toString()));
-            });
+            String nameCache = buf.readString();
+			int[] valueCache = buf.readIntArray();
+			playerData.setGristCacheWithArray(nameCache, valueCache);
+            
+			client.player.sendMessage(Text.literal("Grist Cache: " + Arrays.toString(playerData.getValueCache())));
         });
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
-	}
+	}	
 }

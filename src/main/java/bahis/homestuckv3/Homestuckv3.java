@@ -29,14 +29,13 @@ public class Homestuckv3 implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> { //initial sync of grist cache
             PlayerData playerState = StateSaverAndLoader.getPlayerState(handler.getPlayer());
             PacketByteBuf data = PacketByteBufs.create();
 
-			int[] gristCacheArray = playerState.getGristCache().stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
-			data.writeIntArray(gristCacheArray);
+			data.writeString(playerState.getNameCache());
+			data.writeIntArray(playerState.getValueCache());
+			
             server.execute(() -> {
                 ServerPlayNetworking.send(handler.getPlayer(), INITIAL_SYNC, data);
             });
